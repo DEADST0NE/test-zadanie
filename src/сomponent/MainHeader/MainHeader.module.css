@@ -1,7 +1,6 @@
 header{
     display: flex;
-    justify-content: start;
-    
+    justify-content: center;
     padding-top: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid #ccc;
@@ -9,11 +8,11 @@ header{
 
 header svg {
     width: 70px;
-    margin-left: 20em;
     padding-right: 1em;
 }
 
 header a { 
+    width: 950px;
     display: flex;
     align-items: center;
     font-size: 26px;

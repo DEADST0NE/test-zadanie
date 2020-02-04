@@ -5,18 +5,22 @@
 }
 
 .inputGroup input {
+    width: 800px;
     border-radius: 50px 0 0 50px;
     font-size: 1.5rem;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     border: none;
-    background-color: #f5f5f5;
+    background-color: #d2d2d2;
+    
 }
 
-.inputGroup input :focus{
-    border-color: royalblue;
+.inputGroup input:focus{
+    border: 2px solid;
+    border-color: rgb(138, 163, 238);
     background-color: #ffffff; 
+    outline:none;
 }
 
 .inputGroup button {
@@ -27,5 +31,6 @@
     background-color: #1691dd;
     color: #ffffff; 
     border: none;
+    outline:none;
 }
 
