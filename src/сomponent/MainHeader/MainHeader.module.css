@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    justify-content: start;
+    
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+header svg {
+    width: 70px;
+    margin-left: 20em;
+    padding-right: 1em;
+}
+
+header a { 
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
