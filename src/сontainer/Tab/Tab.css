@@ -1,0 +1,35 @@
+.categories {
+    margin-top: 80px;
+}
+
+.categories nav{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    width: 600px;
+    border-bottom: 1px solid #dee2e6;
+    color: #dee2e6;
+    outline:none;
+}
+
+nav a:hover{
+    color: blue;
+}
+
+.active {
+    border-color: blue;
+    color: blue;
+}
+
+.fade{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
