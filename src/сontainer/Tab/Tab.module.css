@@ -12,6 +12,10 @@
 @media (max-width: 1100px) {
     .categories nav{
         width: 675px;
+        font-size: 20px;
+    }
+    .categories nav a{
+        width: 250px;
     }
   }
 

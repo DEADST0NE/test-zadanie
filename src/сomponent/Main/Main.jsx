@@ -12,7 +12,6 @@ const Main = (props) => {
             <MainHeader />
             <Search />
             <Tab />
-            
         </BrowserRouter>
     )
 }
