@@ -1,6 +1,4 @@
-import React from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React from 'react'; 
 
 import s from './ItemTileList.module.css';
 import ItemTile from '../ItemTile'
@@ -8,13 +6,13 @@ import ItemTile from '../ItemTile'
 
 const ItemTileList = (props) => {
 
-    const Tile = props.data.map(item => (<Col lg="4" key={item.id}>
+    const Tile = props.data.map(item => (<div className={s.itemMb} key={item.id}>
                                             <ItemTile item={item} />
-                                        </Col>)) 
+                                        </div>)) 
     return (
-        <Row className={s.itemList}>
+        <div className={s.itemList}>
             { Tile }
-        </Row>  
+        </div>  
     )
 }
 

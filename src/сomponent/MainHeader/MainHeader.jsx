@@ -1,16 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './MainHeader.module.css'
+import s from './MainHeader.module.css'
 import LogoRD from '../../img/LogoRD';
 
 
 const MainHeader = () => {
     return (
-        <header>
+        <header className={s.header}>
             <NavLink to="/">
                 <LogoRD />
-                <span>Открытый Дагестан</span>
+                <span>Открытый Дагестан</span> 
             </NavLink>
         </header>
     )
