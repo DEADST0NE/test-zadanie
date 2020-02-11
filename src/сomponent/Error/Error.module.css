@@ -1,0 +1,9 @@
+.contetError{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contetError svg {
+    width: 500px;
+}
