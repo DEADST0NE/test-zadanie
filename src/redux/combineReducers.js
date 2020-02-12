@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import Categories from './categories/reducer';
+import reducerCategories from './categories/reducer';
 
 const reducers = combineReducers({
-    Categories,
+    reducerCategories,
 });
 
 export default reducers;
