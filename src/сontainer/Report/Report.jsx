@@ -1,11 +1,7 @@
 import React from 'react';
 
 import ReportList from '../../сomponent/ReportList';
-
-import GroupImg from '../../img/GroupImg';
-import ImgMasks from '../../img/ImgMasks'
-import ImgComp from '../../img/ImgComp'
-
+ 
 import s from './Report.module.css'
 
 const Test1 = [
@@ -523,25 +519,9 @@ const Test1 = [
 
 
 const Report = () => {
-
-    let logo = null;
-    
-    switch('Демография'){
-        case 'Демография':
-            logo = <GroupImg />;
-            break;
-        case 'Культура и досуг':
-            logo = <ImgMasks />;
-            break;
-        case 'Экономика':
-            logo = <ImgComp />;
-            break;
-        default:
-            break; 
-    }
-
+  
     const listItem = Test1.map(item => (<div className={s.reporttlist} key={item.id}>
-                                                  <ReportList item={item} logo={logo} />
+                                                  <ReportList item={item}/>
                                               </div>)) 
  
 
