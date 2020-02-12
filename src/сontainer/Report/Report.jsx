@@ -537,13 +537,18 @@ const Report = () => {
             logo = <ImgComp />;
             break;
         default:
-            break;
-
+            break; 
     }
 
+    const listItem = Test1.map(item => (<div className={s.reporttlist} key={item.id}>
+                                                  <ReportList item={item} logo={logo} />
+                                              </div>)) 
+ 
+
     return (
-        <div className={s.reportt}>
-            <ReportList logo={logo} data={Test1}/>
+        <div className={s.reportt}> 
+          <h1>{Test1[0].industry}</h1>
+          {listItem}
         </div>
     )
 }

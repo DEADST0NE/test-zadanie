@@ -5,19 +5,16 @@ import s from './ReportList.module.css'
 
 
 const ReportList = (props) => {
-
-    let Report = props.data.map(item => (  <div className={s.reportlist}>
-                                                {props.logo}
-                                                    <div>
-                                                        <h2>
-                                                            <NavLink to={`\${item.id}`}> {item.reportName} </NavLink>
-                                                        </h2> 
-                                                            <NavLink className={s.aa} to="/">{item.organization}</NavLink>
-                                                    </div>
-                                            </div> ))
-
+      
     return (
-        {Report}
+        <div className={s.reportlist}>            
+            {props.logo}
+                <div>
+                    <h2> <NavLink to={`\${item.id}`}> {props.item.reportName} </NavLink> </h2> 
+
+                    <NavLink className={s.aa} to="/">{props.item.organization}</NavLink>
+                </div>
+        </div> 
     )
 }
 

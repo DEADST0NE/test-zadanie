@@ -1,4 +1,10 @@
-.reportt{
+.reporttlist{
     display: flex;
     justify-content: center;
+}
+
+.reportt h1{
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 100px;
 }
