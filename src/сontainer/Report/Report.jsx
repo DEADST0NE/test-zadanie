@@ -522,7 +522,7 @@ const Report = () => {
   
     const listItem = Test1.map(item => (<div className={s.reporttlist} key={item.id}>
                                                   <ReportList item={item}/>
-                                              </div>)) 
+                                        </div>)) 
  
 
     return (

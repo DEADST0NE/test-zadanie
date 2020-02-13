@@ -23,11 +23,10 @@ const ItemTile = (props) => {
             break;
         default:
             break;
-
     }
 
     return (
-        <NavLink className={s.tile} to={`/${props.item.mnemo}`}>   
+        <NavLink className={s.tile} to={`/report/`}>   
                 {logo}
                     {props.item.name} 
                 <span>
