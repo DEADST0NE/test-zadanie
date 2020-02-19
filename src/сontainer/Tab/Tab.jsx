@@ -27,14 +27,14 @@ const Tab = (props) => {
 
           <div className={s.tab}>
             <nav>
-              <NavLink to="/сategories/industries/" activeClassName={s.active}>По отраслям</NavLink>
-              <NavLink to="/сategories/organizations/" activeClassName={s.active}>По ведомствам</NavLink>
+              <NavLink to="/categories/industries/" activeClassName={s.active}>По отраслям</NavLink>
+              <NavLink to="/categories/organizations/" activeClassName={s.active}>По ведомствам</NavLink>
             </nav>
           </div>
 
           <div className={s.tabContent}> 
-            <Route path="/сategories/industries/" component={() => <ItemTileList data={props.categories.industries}/> }/>
-            <Route path="/сategories/organizations/" component={() => <ItemTileList data={props.categories.organizations}/>} />
+            <Route path="/categories/industries/" component={() => <ItemTileList data={props.categories.industries}/> }/>
+            <Route path="/categories/organizations/" component={() => <ItemTileList data={props.categories.organizations}/>} />
           </div> 
 
         </div>

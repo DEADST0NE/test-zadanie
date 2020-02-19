@@ -8,7 +8,7 @@ import LogoRD from '../../img/LogoRD';
 const MainHeader = () => {
     return (
         <header className={s.header}>
-            <NavLink to="/сategories/industries/">
+            <NavLink to="/categories/industries/">
                 <LogoRD />
                 <span>Открытый Дагестан</span> 
             </NavLink>

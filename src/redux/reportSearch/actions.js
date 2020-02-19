@@ -4,6 +4,7 @@ import {
     REPORT_SEARCH_GET_REQUEST,
     REPORT_SEARCH_GET_SUCCESS,
     REPORT_SEARCH_GET_ERROR,
+    REPORT_SEARCH_UPDATE,
 } from '../varActions';
 
 const getReportSearchRequest = () => ({
@@ -19,6 +20,11 @@ const getReportSearchError = () => ({
     type: REPORT_SEARCH_GET_ERROR,
     payload: true
 });
+
+export const getReportSearchUpdate = (date) => ({
+    type: REPORT_SEARCH_UPDATE,
+    payload: date,
+})
 
 const getReportSearchAxios = async (testSeach) => {
     return await axios.get(`Reports/categories/search?SearchText=${testSeach}`)

@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
 
 import MainHeader from '../MainHeader';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
@@ -13,16 +15,26 @@ const Main = (props) => {
         <BrowserRouter>
             <MainHeader />
             
-            <Redirect to="/сategories/industries/"/>
+            <Redirect to="/categories/industries/"/>
 
-            <Route path="/сategories/" component={() => <Search /> }/>
-            <Route path="/сategories/" component={() => <Tab /> }/>
+            <Search />
+            <Route path="/categories/" component={() => <Tab /> }/>
+
             <Route path="/report/" component={() => <Report /> }/>
 
-            <Route path="/select/" component={() => <Report /> }/>
+            <Route path="/search/" component={() => <Report data={props.SearchDate} loading={props.SearchLoading} error={props.SearchError}/> }/>
 
         </BrowserRouter>
     )
 }
 
-export default Main;
+const mapStateToProps = (state) => ({
+    SearchDate: state.reducerSearch.report,
+    SearchError: state.reducerSearch.error,
+    SearchLoading: state.reducerSearch.loading,
+})
+
+const mapDispatchToProps = { 
+}
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
