@@ -19,7 +19,7 @@ const Report = ({data, loading, error, bool=true}) => {
   
     return (
         <div className={s.reportt}> 
-          {bool ? <h1>{data[0].industry}</h1> : void 0}
+          {bool ? <h1>{data[0].nameTitle}</h1> : void 0}
           {listItem}
         </div>
     )

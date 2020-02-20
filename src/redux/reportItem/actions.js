@@ -25,16 +25,19 @@ const getReportItemAxios = async (id) => {
     if(String(id).length<5){
         return await axios.get(`Reports/categories/search?IndustryId=${id}`)
         .then(response => response.data)
+        .then((data) => { data[0].nameTitle = data[0].industry; return data } )
     }
     else{
         return await axios.get(`Reports/categories/search?OrganizationId=${id}`)
         .then(response => response.data)
+        .then((data) => { data[0].nameTitle = data[0].organization; return data } )
     }
 };
 
 export const getReportItem = (id) => (dispatch) => {
     dispatch(getReportItemRequest());
     getReportItemAxios(id)
+    
       .then((data) => dispatch(getReportItemSuccess(data)))
       .catch((err) => dispatch(getReportItemError(err)))
 };
