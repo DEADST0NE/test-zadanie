@@ -18,11 +18,12 @@ const Main = (props) => {
             <Redirect to="/categories/industries/"/>
 
             <Search />
+
             <Route path="/categories/" component={() => <Tab /> }/>
 
-            <Route path="/report/" component={() => <Report /> }/>
+            <Route path="/report/" component={() => <Report data={props.ReportData} loading={props.ReportLoading} error={props.ReportError} bool={true} /> }/>
 
-            <Route path="/search/" component={() => <Report data={props.SearchDate} loading={props.SearchLoading} error={props.SearchError}/> }/>
+            <Route path="/search/" component={() => <Report data={props.SearchDate} loading={props.SearchLoading} error={props.SearchError} bool={false}/> }/>
 
         </BrowserRouter>
     )
@@ -32,6 +33,10 @@ const mapStateToProps = (state) => ({
     SearchDate: state.reducerSearch.report,
     SearchError: state.reducerSearch.error,
     SearchLoading: state.reducerSearch.loading,
+
+    ReportData: state.reducerReportItem.reportData,
+    ReportLoading: state.reducerReportItem.loading,
+    ReportError: state.reducerReportItem.error,
 })
 
 const mapDispatchToProps = { 

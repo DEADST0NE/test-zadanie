@@ -6,11 +6,11 @@ import Spiner from '../../сomponent/Spiner';
 
 import s from './Report.module.css'
  
-const Report = ({data, loading, error}) => {
+const Report = ({data, loading, error, bool=true}) => {
 
   if (loading === true){ return <Spiner /> }
 
-  else if(error === true || data === '' || data === null){ return <Error /> }
+  else if(error === true || !data){ return <Error /> }
   
   else{ 
     const listItem = data.map(item => ( <div className={s.reporttlist} key={item.id}>
@@ -19,7 +19,7 @@ const Report = ({data, loading, error}) => {
   
     return (
         <div className={s.reportt}> 
-          <h1>{data[0].industry}</h1>
+          {bool ? <h1>{data[0].industry}</h1> : void 0}
           {listItem}
         </div>
     )

@@ -12,7 +12,7 @@ const Search = (props) => {
     <>
         <div className={s.inputGroup}>
             <div className={s.searchW}>
-                <input onChange={ (el)=>{ props.getReportSearchUpdate(el.target.value)} } placeholder="Поиск" />  
+                <input value={props.dataSelect} onChange={ (el)=>{ props.getReportSearchUpdate(el.target.value)} } placeholder="Поиск" />  
                 <NavLink onClick={ () => { props.getReportSearch(props.dataSelect) } } to="/search/">Найти</NavLink> 
             </div>
         </div> 

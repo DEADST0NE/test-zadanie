@@ -6,7 +6,7 @@ import {
 } from '../varActions';
 
 const initialState ={
-    dataSelect: null,
+    dataSelect: '',
     report: null,
     loading: true,
     error: false
@@ -36,6 +36,7 @@ const reducerSearch = (state = initialState, action) => {
                 error: true
             }
         case REPORT_SEARCH_UPDATE: 
+        console.log(action.payload)
         return {
             ...state,
             dataSelect: action.payload,

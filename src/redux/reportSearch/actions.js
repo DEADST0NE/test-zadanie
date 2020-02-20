@@ -32,7 +32,6 @@ const getReportSearchAxios = async (testSeach) => {
 };
 
 export const getReportSearch = (testSeach) => (dispatch) => {
-    console.log(testSeach);
     dispatch(getReportSearchRequest());
     getReportSearchAxios(testSeach)
       .then((data) => dispatch(getReportSearchSuccess(data)))

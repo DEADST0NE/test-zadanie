@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import {connect} from 'react-redux';
+ 
 import s from './ItemTile.module.css'
+
+import { getReportItem } from '../../redux/reportItem/actions'
 
 import GroupImg from '../../img/GroupImg';
 import ImgMasks from '../../img/ImgMasks'
@@ -26,7 +29,7 @@ const ItemTile = (props) => {
     }
 
     return (
-        <NavLink className={s.tile} to={`/report/`}>   
+        <NavLink className={s.tile} onClick={ () => { props.getReportItem(props.item.id) } } to={`/report/${props.item.id}`}>   
                 {logo}
                     {props.item.name} 
                 <span>
@@ -36,4 +39,11 @@ const ItemTile = (props) => {
     )
 }
 
-export default ItemTile;
+const mapStateToProps = (state) => ({
+})
+
+const mapDispatchToProps = { 
+    getReportItem,
+}
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(ItemTile);
