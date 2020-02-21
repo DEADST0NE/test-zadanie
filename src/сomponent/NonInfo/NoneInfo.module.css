@@ -1,0 +1,14 @@
+.centerBlok{
+    display: flex;
+    justify-content: center;
+}
+
+.nonInfo{
+    margin-top: 40px;
+    width: 1200px;
+    background-color: #fff3cd;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}

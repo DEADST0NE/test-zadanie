@@ -9,6 +9,7 @@ import { getReportItem } from '../../redux/reportItem/actions'
 import GroupImg from '../../img/GroupImg';
 import ImgMasks from '../../img/ImgMasks'
 import ImgComp from '../../img/ImgComp'
+import ImgFinans from '../../img/ImgFinans'
 
 const ItemTile = (props) => {
 
@@ -23,6 +24,9 @@ const ItemTile = (props) => {
             break;
         case 'Экономика':
             logo = <ImgComp />;
+            break;
+        case 'Финансы и бюджет':
+            logo = <ImgFinans />;
             break;
         default:
             break;
