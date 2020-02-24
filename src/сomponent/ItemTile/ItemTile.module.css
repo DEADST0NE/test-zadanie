@@ -10,6 +10,7 @@
     position: relative; 
     min-height: 125px;
     text-align: center;
+    font-size: 20px;
 }
 
 .tile svg {
@@ -24,11 +25,7 @@ a{
     color: black;
     font-weight: bold
 }
-
-.tile { 
-    font-size: 20px;
-}
-
+ 
 .tile span {
     position: absolute;
     top: 15px;
@@ -36,15 +33,28 @@ a{
     color: #999;
 }
 
-.tile:hover {
+.tileBlue:hover {
     color: #ffffff;
     background-color: #1691dd;
 }
 
-.tile:hover svg {
+.tileBlue:hover svg {
     fill: #ffffff;
 }
 
-.tile:hover span {
+.tileBlue:hover span {
+    color: #ffffff;
+}
+
+.tileRed:hover {
+    color: #ffffff;
+    background-color: #dd1d16;
+}
+
+.tileRed:hover svg {
+    fill: #ffffff;
+}
+
+.tileRed:hover span {
     color: #ffffff;
 }

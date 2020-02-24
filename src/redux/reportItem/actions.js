@@ -20,23 +20,31 @@ const getReportItemError = (error) => ({
     payload: error
 });
 
-const getReportItemAxios = async (id) => {
-    
-    if(String(id).length<5){
+const getReportItemIndustryAxios = async (id) => {
+     
         return await axios.get(`Reports/categories/search?IndustryId=${id}`)
         .then(response => response.data)
-        .then((data) => { data[0].nameTitle = data[0].industry; return data } )
-    }
-    else{
-        return await axios.get(`Reports/categories/search?OrganizationId=${id}`)
-        .then(response => response.data)
-        .then((data) => { data[0].nameTitle = data[0].organization; return data } )
-    }
+        .then((data) => { data[0].nameTitle = data[0].industry; return data } ) 
 };
 
-export const getReportItem = (id) => (dispatch) => {
+const getReportItemOrganizationAxios = async (id) => {
+     
+    return await axios.get(`Reports/categories/search?OrganizationId=${id}`)
+    .then(response => response.data)
+    .then((data) => { data[0].nameTitle = data[0].organization; return data } ) 
+};
+ 
+export const getReportItemIndustry = (id) => (dispatch) => { 
     dispatch(getReportItemRequest());
-    getReportItemAxios(id)
+    getReportItemIndustryAxios(id)
+    
+      .then((data) => dispatch(getReportItemSuccess(data)))
+      .catch((err) => dispatch(getReportItemError(err)))
+};
+
+export const getReportItemOrganization = (id) => (dispatch) => { 
+    dispatch(getReportItemRequest());
+    getReportItemOrganizationAxios(id)
     
       .then((data) => dispatch(getReportItemSuccess(data)))
       .catch((err) => dispatch(getReportItemError(err)))

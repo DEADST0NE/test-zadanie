@@ -10,7 +10,7 @@ import { getReportSearchUpdate } from '../../redux/reportSearch/actions';
 const MainHeader = (props) => {
     return (
         <header className={s.header}>
-            <NavLink to="/categories/industries/" onClick={ ()=>{props.getReportSearchUpdate('') }}>
+            <NavLink to="/categories" onClick={ ()=>{props.getReportSearchUpdate('') }}>
                 <LogoRD />
                 <span>Открытый Дагестан</span> 
             </NavLink>

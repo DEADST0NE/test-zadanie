@@ -5,9 +5,9 @@ import ItemTile from '../ItemTile'
 
 
 const ItemTileList = (props) => {
-
+    
     const Tile = props.data.map(item => (<div className={s.itemMb} key={item.id}>
-                                            <ItemTile item={item} />
+                                            <ItemTile color={props.color} fun={ props.fun } item={ item } />
                                         </div>)) 
     return (
         <div className={s.itemList}>
