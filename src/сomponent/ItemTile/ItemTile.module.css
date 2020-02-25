@@ -1,15 +1,14 @@
 .tile{ 
-    width: 360px;
-    height: auto;
-    padding: 20px 5px 20px 5px;
+    width: 345px;
+    height:auto; 
     background-color: #ececec;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 40px; 
     align-items: center;
     position: relative; 
-    min-height: 125px;
-    text-align: center;
+    min-height: 125px; 
     font-size: 20px;
 }
 

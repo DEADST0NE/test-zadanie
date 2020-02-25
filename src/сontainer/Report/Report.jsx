@@ -24,7 +24,9 @@ const Report = ({data, loading, error, bool=true}) => {
     return (
         <div className={s.reportt}> 
           {bool ? <h1>{data[0].nameTitle}</h1> : void 0}
-          {listItem}
+          <div className={s.reporttContent}>
+            {listItem}
+          </div>
         </div>
     )
   } 

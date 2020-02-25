@@ -6,6 +6,9 @@
 .reportt h1{
     width: 1200px;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-top: 70px;
+}
+
+.reporttContent{
     margin-top: 70px;
 }
