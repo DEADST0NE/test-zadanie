@@ -5,25 +5,14 @@ import ItemTile from '../ItemTile'
 
 
 const ItemTileList = ({data, color, fun}) => {
-    
-    switch(color){
-        case'red': 
-            color = s.tileRed;
-            break;
-        case'blue':
-            color = s.tileBlue;
-            break;
-        default:
-            color = s.tileRed;
-            break;
-    } 
-
-    const Tile = data.map(item => (<div className={`${s.itemMb} ${color}`} key={item.id}>
-                                            <ItemTile fun={ fun } item={ item } />
-                                        </div>)) 
+     
+    color === 'red' ? color = s.tileRed : color = s.tileBlue;
+ 
     return (
         <div className={s.itemList}>
-            { Tile }
+            { data.map(item => (<div className={`${s.itemMb} ${color}`} key={item.id}>
+                                    <ItemTile fun={ fun } item={ item } />
+                                </div>)) }
         </div>  
     )
 }

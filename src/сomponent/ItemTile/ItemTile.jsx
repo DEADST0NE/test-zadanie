@@ -11,8 +11,8 @@ const ItemTile = ({item, fun}) => {
 
     return (<>
             <NavLink className={s.tile} onClick={ () => { fun(item.id) } } to={`/report/${item.id}`}>   
-                    <SvgCotegories memo={item.mnemo}/>
-                        {item.name}  
+                <SvgCotegories memo={item.mnemo}/>
+                {item.name}  
             </NavLink>
             <span className={s.countReports}>
                 {item.countReports} 
