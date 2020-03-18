@@ -7,10 +7,10 @@ import LogoRD from '../../img/LogoRD';
 
 import { getReportSearchUpdate } from '../../redux/reportSearch/actions';
 
-const MainHeader = (props) => {
+const MainHeader = ({...props}) => {
     return (
         <header className={s.header}>
-            <NavLink to="/categories" onClick={ ()=>{props.getReportSearchUpdate('') }}>
+            <NavLink to="/categories" onClick={ ()=>{getReportSearchUpdate('') }}>
                 <LogoRD />
                 <span>Открытый Дагестан</span> 
             </NavLink>

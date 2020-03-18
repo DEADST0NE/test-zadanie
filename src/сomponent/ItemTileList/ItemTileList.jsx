@@ -4,10 +4,22 @@ import s from './ItemTileList.module.css';
 import ItemTile from '../ItemTile'
 
 
-const ItemTileList = (props) => {
+const ItemTileList = ({data, color, fun}) => {
     
-    const Tile = props.data.map(item => (<div className={s.itemMb} key={item.id}>
-                                            <ItemTile color={props.color} fun={ props.fun } item={ item } />
+    switch(color){
+        case'red': 
+            color = s.tileRed;
+            break;
+        case'blue':
+            color = s.tileBlue;
+            break;
+        default:
+            color = s.tileRed;
+            break;
+    } 
+
+    const Tile = data.map(item => (<div className={`${s.itemMb} ${color}`} key={item.id}>
+                                            <ItemTile fun={ fun } item={ item } />
                                         </div>)) 
     return (
         <div className={s.itemList}>

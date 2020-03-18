@@ -3,33 +3,18 @@ import { NavLink } from 'react-router-dom';
 
 import s from './ReportList.module.css'
 
-import GroupImg from '../../img/GroupImg';
-import ImgMasks from '../../img/ImgMasks'
-import ImgComp from '../../img/ImgComp'
+import SvgCotegories from '../../img/SvgCotegories'; 
 
-const selectLogo = (string) => {
-    switch(string){
-      case 'Демография':
-        return <GroupImg />; 
-      case 'Культура и досуг':
-        return <ImgMasks />; 
-      case 'Экономика':
-        return <ImgComp />;
-      default:
-        return null; 
-  }
-}
-
-const ReportList = (props) => {
+const ReportList = ({item}) => {
       
     return (
         <div className={s.reportlist}>            
-            {selectLogo(props.item.industry)}
+             <SvgCotegories memo={item.mnemo}/>
                 <div>
-                    <h2> <NavLink to={`\${item.id}`}> {props.item.reportName} </NavLink> </h2> 
+                    <h2> <NavLink to={`\${item.id}`}> {item.reportName} </NavLink> </h2> 
 
-                    <NavLink className={s.aa} to="/">{props.item.organization}</NavLink>
-                    <span>{props.item.period}</span>
+                    <NavLink className={s.aa} to="/">{item.organization}</NavLink>
+                    <span>{item.period}</span>
                 </div>
         </div> 
     )

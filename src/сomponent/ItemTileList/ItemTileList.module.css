@@ -1,13 +1,51 @@
 .itemList{
     display: flex;
     flex-wrap: wrap;
-    width: 1200px;
+    width: 1300px;
     margin-top: 20px; 
     justify-content: space-between;
 }
 
 .itemMb{
     margin-bottom: 20px;
+    background-color: #ececec;
+    border-radius: 20px;
+    min-height: 75px; 
+    padding: 30px;
+    position: relative; 
+}
+
+.tileBlue:hover { 
+    background-color: #1691dd;
+}
+
+.tileBlue:hover svg {
+    fill: #ffffff;
+}
+
+.tileBlue:hover a {
+    color: #ffffff;
+}
+
+.tileBlue:hover span {
+    color: #ffffff;
+}
+
+.tileRed:hover {
+    color: #ffffff;
+    background-color: #dd1d16;
+}
+
+.tileRed:hover svg {
+    fill: #ffffff;
+}
+
+.tileRed:hover a {
+    color: #ffffff;
+}
+
+.tileRed:hover span {
+    color: #ffffff;
 }
 
 @media (max-width: 1100px) {

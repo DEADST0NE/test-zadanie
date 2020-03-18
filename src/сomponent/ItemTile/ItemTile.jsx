@@ -3,48 +3,21 @@ import { NavLink } from 'react-router-dom';
  
 import s from './ItemTile.module.css'
  
-import GroupImg from '../../img/GroupImg';
-import ImgMasks from '../../img/ImgMasks'
-import ImgComp from '../../img/ImgComp'
-import ImgFinans from '../../img/ImgFinans'
+import SvgCotegories from '../../img/SvgCotegories'; 
 
-const ItemTile = (props) => {
+const ItemTile = ({item, fun}) => {
+ 
+    
 
-    let logo = null;
-    let color = s.tileRed;
-    switch(props.item.name){
-        case 'Демография':
-            logo = <GroupImg />;
-            color=s.tileBlue;
-            break;
-        case 'Культура и досуг':
-            logo = <ImgMasks />;
-            color=s.tileBlue;
-            break;
-        case 'Экономика':
-            logo = <ImgComp />;
-            color=s.tileBlue;
-            break;
-        case 'Финансы и бюджет':
-            logo = <ImgFinans />;
-            color=s.tileBlue;
-            break;
-        default:
-            break;
-    }
-
-    const click = (id) => {
-        props.fun(id);
-    }
-
-    return (
-        <NavLink className={`${s.tile} ${color}`} onClick={ () => { click(props.item.id) } } to={`/report/${props.item.id}`}>   
-                {logo}
-                    {props.item.name} 
-                <span>
-                    {props.item.countReports} 
-                </span> 
-        </NavLink>
+    return (<>
+            <NavLink className={s.tile} onClick={ () => { fun(item.id) } } to={`/report/${item.id}`}>   
+                    <SvgCotegories memo={item.mnemo}/>
+                        {item.name}  
+            </NavLink>
+            <span className={s.countReports}>
+                {item.countReports} 
+            </span> 
+        </>
     )
 }
 

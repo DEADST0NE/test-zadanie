@@ -11,17 +11,17 @@ import { getReportItemIndustry, getReportItemOrganization } from '../../redux/re
 import Spiner from '../../сomponent/Spiner';
 import Error from '../../сomponent/Error';
 
-const TabCategories = (props) => {
+const TabCategories = ( {getCategories, getReportItemIndustry, getReportItemOrganization, categories, loading, error}) => {
  
     useEffect(() => {
-      const GetCategories = props.getCategories;
+      const GetCategories = getCategories;
       GetCategories();
-    },[props.getCategories]);
+    },[getCategories]);
 
-    if(props.loading){
+    if(loading){
       return <Spiner /> 
     }
-    else if (props.error){
+    else if (error){
       return <Error />
     }
 
@@ -36,11 +36,10 @@ const TabCategories = (props) => {
                     <Tab >По ведомствам</Tab> 
                 </div>
               </TabList>
-            
-            
+             
               <div className={s.tabContent}> 
-              <TabPanel> <ItemTileList fun={ (id) => { props.getReportItemIndustry(id) } } data={props.categories.industries}/>  </TabPanel>
-              <TabPanel> <ItemTileList fun={ (id) => { props.getReportItemOrganization(id) } }  data={props.categories.organizations}/> </TabPanel> 
+              <TabPanel> <ItemTileList fun={ (id) => { getReportItemIndustry(id) } } data={categories.industries} color={'blue'}/></TabPanel>
+              <TabPanel> <ItemTileList fun={ (id) => { getReportItemOrganization(id) } }  data={categories.organizations} color={'red'}/> </TabPanel> 
               </div> 
 
             </Tabs>

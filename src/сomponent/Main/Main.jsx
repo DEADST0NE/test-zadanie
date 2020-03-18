@@ -6,9 +6,7 @@ import MainHeader from '../MainHeader';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import Search from '../Search';
 import Tab from '../../сontainer/Tab'
-
-import s from './Main.module.css';
-
+  
 import Report from '../../сontainer/Report';
   
 const Main = (props) => {
@@ -26,6 +24,7 @@ const Main = (props) => {
             <Route path="/report" component={() => <Report data={props.ReportData} loading={props.ReportLoading} error={props.ReportError} bool={true} /> }/>
 
             <Route path="/search" component={() => <Report data={props.SearchDate} loading={props.SearchLoading} error={props.SearchError} bool={false}/> }/>
+
         </BrowserRouter>
     )
 }

@@ -6,14 +6,14 @@ import s from './Search.module.css'
  
 import { getReportSearch, getReportSearchUpdate } from '../../redux/reportSearch/actions';
 
-const Search = (props) => {
+const Search = ( {dataSelect, getReportSearch, getReportSearchUpdate} ) => {
     
     return (
     <>
         <div className={s.inputGroup}>
             <div className={s.searchW}>
-                <input value={props.dataSelect} onChange={ (el)=>{ props.getReportSearchUpdate(el.target.value)} } placeholder="Поиск" />  
-                <NavLink onClick={ () => { props.getReportSearch(props.dataSelect) } } to="/search/">Найти</NavLink> 
+                <input value={dataSelect} onChange={ (el)=>{ getReportSearchUpdate(el.target.value)} } placeholder="Поиск" />  
+                <NavLink onClick={ () => { getReportSearch(dataSelect) } } to="/search/">Найти</NavLink> 
             </div>
         </div> 
     </>
